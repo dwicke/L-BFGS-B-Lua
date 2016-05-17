@@ -28,7 +28,7 @@ static integer iprint;
 
 int lua_setf(lua_State *L) {
   f = lua_tonumber(L, -1);
-  printf("f = %f", f);
+  //printf("f = %f", f);
   return 0;
 }
 
@@ -42,8 +42,8 @@ int lua_setGrad(lua_State *L) {
       g[i - 1] = lua_tonumber( L, -1 );
       lua_pop( L, 1 );
   }
-  printf("\ng[0] = %f", g[0]);
-  printf("\ng[1] = %f", g[1]);
+  //printf("\ng[0] = %f", g[0]);
+  //printf("\ng[1] = %f", g[1]);
   return 0;
 }
 
@@ -94,10 +94,10 @@ int lua_lbfgsb(lua_State *L) {
   Need to have the new f and gradient values
 */
 int lua_lbfgsbPulse(lua_State *L) {
-  printf("before x = %f , %f  f = %f  g = %f  %f task = %d \n", x[0], x[1], f, g[0], g[1], (*task));
+  //printf("before x = %f , %f  f = %f  g = %f  %f task = %d \n", x[0], x[1], f, g[0], g[1], (*task));
   setulb(&n, &m, x, l, u, nbd, &f, g, &factr, &pgtol, wa, iwa, task, &
             iprint, csave, lsave, isave, dsave);
-  printf("after x = %f , %f  f = %f  g = %f  %f task = %d", x[0], x[1], f, g[0], g[1], (*task));
+  //printf("after x = %f , %f  f = %f  g = %f  %f task = %d", x[0], x[1], f, g[0], g[1], (*task));
   if (!(*task==NEW_X) && !IS_FG(*task)) {
     lua_pushboolean(L, 1);
     return 1;
@@ -152,7 +152,7 @@ static int getInputArray (lua_State* L) {
 
 int luaopen_luawrapper(lua_State *L){
   m = 15; // number of corrections  should be 3 <= m <= 20 (larger is slower)
-  iprint = 0; // < 0 for no printing
+  iprint = -1; // < 0 for no printing
   pgtol = 1e-10;
   factr = 1e7; //
 
