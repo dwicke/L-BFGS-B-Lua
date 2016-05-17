@@ -1,4 +1,6 @@
-# L-BFGS-B-C
+# L-BFGS-B-Lua
+I used the following to create the wrapper for Lua for L-BFGS-B algorithm.
+
 L-BFGS-B, converted from Fortran to C with Matlab wrapper
 
 This is a C version of the well-known [L-BFGS-B code](http://users.eecs.northwestern.edu/~nocedal/lbfgsb.html), version 3.0.
@@ -36,6 +38,8 @@ The L-BFGS-B website requests that you cite them. From their website:
 It would be nice to cite this website as well since it took a significant amount of work...
 
 # Authors
+This Lua wrapper is written by Drew Wicke
+
 This C version and Matlab wrapper are written by Stephen Becker, stephen.becker@colorado.edu
 
 The L-BFGS-B algorithm was written in the 1990s (mainly 1994, some revisions 1996) by Ciyou Zhu (in collaboration with R.H. Byrd, P. Lu-Chen and J. Nocedal)
