@@ -35,7 +35,8 @@ int lua_setf(lua_State *L) {
 
 int lua_setGrad(lua_State *L) {
   int len = lua_objlen(L, 1);
-  for ( int i = 1; i <= len; ++i ) {
+  int i =1;
+  for ( i = 1; i <= len; ++i ) {
       lua_pushinteger( L, i );
       lua_gettable( L, -2 );
       g[i - 1] = lua_tonumber( L, -1 );
@@ -48,7 +49,8 @@ int lua_setGrad(lua_State *L) {
 
 int lua_setLowerBound(lua_State *L) {
   int len = lua_objlen(L, 1);
-  for ( int i = 1; i <= len; ++i ) {
+  int i  = 1;
+  for ( i = 1; i <= len; ++i ) {
       lua_pushinteger( L, i );
       lua_gettable( L, -2 );
       l[i - 1] = lua_tonumber( L, -1 );
@@ -59,7 +61,8 @@ int lua_setLowerBound(lua_State *L) {
 
 int lua_setUpperBound(lua_State *L) {
   int len = lua_objlen(L, 1);
-  for ( int i = 1; i <= len; ++i ) {
+  int i = 1;
+  for ( i = 1; i <= len; ++i ) {
       lua_pushinteger( L, i );
       lua_gettable( L, -2 );
       u[i - 1] = lua_tonumber( L, -1 );
