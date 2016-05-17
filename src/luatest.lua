@@ -1,14 +1,16 @@
+package.path = package.path..";../../?/init.lua"
+package.path = package.path..";../../?.lua"
 
 require "luawrapper"
 
 
 function getf(action1, action2)
   local x1,y1 = -10,-10
-  local h1 = -100
+  local h1 = 100
   local s1 = 4.0
   local f1 = h1*(1 - (((action1-x1)/s1)*((action1-x1)/s1)) - (((action2-y1)/s1)*((action2-y1)/s1))) + 50
   print ("lua f = ".. f1 .. "  actions  = " .. action1 .. " " .. action2)
-  return f1
+  return -f1
 end
 
 function getgrad(action1, action2)
