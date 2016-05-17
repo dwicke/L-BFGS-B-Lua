@@ -143,6 +143,10 @@ static int expose_array(lua_State* L, double array[]) {
    return 1;
 }
 
+static int lua_debugPrint(lua_State*L) {
+  iprint = lua_tonumber(L, -1);
+  return 0;
+}
 
 
 // test routine which exposes our test array to Lua
@@ -171,5 +175,6 @@ int luaopen_luawrapper(lua_State *L){
   lua_register(L, "setUpperBound", lua_setUpperBound);
   lua_register(L, "setLowerBound", lua_setLowerBound);
   lua_register(L, "setNumberVars", lua_setNumVars);
+  lua_register(L, "debugPrint", lua_debugPrint);
   return 0;
 }
