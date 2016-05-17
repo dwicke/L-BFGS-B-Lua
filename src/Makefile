@@ -8,7 +8,7 @@ CC = gcc
 
 #FFLAGS = -O -Wall -fbounds-check -g -Wno-uninitialized 
 #FFLAGS += -fdefault-integer-8
-CFLAGS = -O3 -Wall -Wno-uninitialized 
+CFLAGS = -O3 -Wall -Wno-uninitialized -std=c99
 #CFLAGS = -g -Wall -lm -DDEBUG -Wuninitialized -Wextra -Wno-unused-parameter
 LDFLAGS = -lm
 
